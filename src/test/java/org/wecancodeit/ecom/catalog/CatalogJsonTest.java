@@ -12,6 +12,7 @@ import org.springframework.boot.test.autoconfigure.json.JsonTest;
 import org.springframework.boot.test.json.JacksonTester;
 import org.springframework.boot.test.json.JsonContent;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.wecancodeit.ecom.catalog.Product;
 
 @RunWith(SpringRunner.class)
 @JsonTest

@@ -10,6 +10,8 @@ import static org.junit.Assert.assertThat;
 import java.util.Collection;
 
 import org.junit.Test;
+import org.wecancodeit.ecom.catalog.BrowseController;
+import org.wecancodeit.ecom.catalog.Product;
 
 public class BrowseControllerTest {
 

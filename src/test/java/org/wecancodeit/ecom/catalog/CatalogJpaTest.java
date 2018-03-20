@@ -7,6 +7,7 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.wecancodeit.ecom.catalog.Product;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
