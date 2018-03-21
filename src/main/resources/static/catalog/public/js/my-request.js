@@ -1,10 +1,11 @@
-const xhr = new XHMLHttpRequest(); 
-xhr.onreadystatechange = function () {
-	if (xhe.readyState === 4 && xhr.status === 200) {
-		const res = JSON.parse(xhr.responseText) 
+
+const xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function() {
+	if (xhr.readyState === 4 && xhr.status === 200) {
+		const res = JSON.parse(xhr.responseText)
 		const productsContainer = document.querySelector('#products-container')
 
-		for (let product in res) {
+		for (let product of res) {
 			const productContainer = document.createElement('div')
 			const productLink = document.createElement('a')
 			productLink.setAttribute('href', '/catalog/product.html');
@@ -14,6 +15,5 @@ xhr.onreadystatechange = function () {
 		}
 	}
 }
-
-xhr.open('GET', '/products',true)
+xhr.open('GET', '/products', true)
 xhr.send()
