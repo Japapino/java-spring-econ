@@ -19,6 +19,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.wecancodeit.ecom.catalog.BrowseController;
 import org.wecancodeit.ecom.catalog.BrowseController.ProductNotFoundException;
 import org.wecancodeit.ecom.catalog.Product;
@@ -77,7 +79,12 @@ public class BrowseControllerTest {
 	public void shouldReturnNotfoundForBadProductId() {
 		long invalidProductId = 42L; 
 		underTest.getProduct(invalidProductId); 
-		
+	}
+	
+
+
+	@ResponseStatus(HttpStatus.NOT_FOUND)
+	public class ProductNotFoundException extends RuntimeException {
 	}
 	
 }

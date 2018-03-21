@@ -32,8 +32,13 @@ public class CatalogMvcTest {
 	
 	@Test
 	public void shouldRetrieveAnIndividualProduct() throws Exception{
-		when(productRepo.findOne(42L)).thenReturn(mock(Product.class));
+		when(productRepo.findOne(42L)).thenReturn(new Product("some product"));
 		mvc.perform(get("/products/42")).andExpect(status().isOk());
+	}
+	
+	//Test for 404
+	public void shouldNotFindProductId() throws Exception {
+		mvc.perform(get("/products/42")).andExpect(status().isNotFound());
 	}
 	
 
